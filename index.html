@@ -55,7 +55,7 @@
 
     <footer class="container-fluid">
         <section class="row justify-content-center">
-            <div class="col-4 text-center" id="total">Total</div>
+            <div class="col-4 text-center" id="total">Total Moles : 0</div>
         </section>
 
         <section class="row">
@@ -76,33 +76,34 @@
                             </div>
 
                             <div class="col-5 text-center">
-                                <button class="upgradeButton " onclick="buyClickUpgrades('sledgehammer')">250
+                                <button class="upgradeButton " onclick="buyClickUpgrades('hammer')">250
                                     Moles</button>
                             </div>
                             <div class="col-6 ">
-                                <p>Sledgehammer</p>
+                                <p>Hammer</p>
                                 <p>+5</p>
                             </div>
                         </div>
                     </div>
                     <!-- //SECTION - Auto Upgrades Section -->
                     <div class="col-6">
-                        <div class="row text-center p-3">
+                        <div class="row align-items-center p-3">
                             <p>Auto Upgrades</p>
-                            <div class="col-8 infoCard">
-                                <button class="upgradeButton " onclick="buyAutoUpgrades('backhoe')">500 Moles</button>
-                            </div>
-                            <div class="col-4 infoCard">
-                                <p>Sledge Hammer</p>
-                                <p>+1</p>
-                            </div>
-                            <div class="col-8 infoCard">
-                                <button class="upgradeButton " onclick="buyAutoUpgrades('excavator')">1000
+                            <div class="col-5 text-center ">
+                                <button class="upgradeButton " onclick="buyAutomaticUpgrades('backhoe')">500
                                     Moles</button>
                             </div>
-                            <div class="col-4 infoCard">
-                                <p>Drill</p>
-                                <p>+5</p>
+                            <div class="col-6 ">
+                                <p>Backhoe</p>
+                                <p>+25</p>
+                            </div>
+                            <div class="col-5 text-center">
+                                <button class="upgradeButton " onclick="buyAutomaticUpgrades('excavator')">1000
+                                    Moles</button>
+                            </div>
+                            <div class="col-6 ">
+                                <p>Excavator</p>
+                                <p>+50</p>
                             </div>
                         </div>
                     </div>
@@ -149,10 +150,12 @@
                     </div>
 
                     <!-- //SECTION - Auto Stats Section -->
-                    <div class="col-6">
-                        <div class="row text-center p-3">
+                    <div class="col-6 text-center p-3">
+                        <div class="">
                             <p>Auto Stats</p>
-
+                        </div>
+                        <div class="row text-center p-3" id="automaticUpgradeName">
+                            <!-- 
                             <div class="col-3 infoCard">
                                 <p>20</p>
                             </div>
@@ -177,7 +180,7 @@
                             </div>
                             <div class="col-3 infoCard">
                                 <p>45</p>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>

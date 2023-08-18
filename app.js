@@ -8,7 +8,7 @@ let clickUpgrades = [
         multiplier: 1
     },
     {
-        name: 'sledgehammer',
+        name: 'hammer',
         price: 250,
         quantity: 0,
         multiplier: 5
@@ -71,8 +71,8 @@ function buyClickUpgrades(clickUpgradeName) {
     drawClickUpgrade()
 }
 
-function buyAutoUpgrades(autoUpgradeName) {
-    let purchasedAutomaticUpgrade = automaticUpgrades.find(automaticUpgrade => automaticUpgrade.name == autoUpgradeName)
+function buyAutomaticUpgrades(automaticUpgradeName) {
+    let purchasedAutomaticUpgrade = automaticUpgrades.find(automaticUpgrade => automaticUpgrade.name == automaticUpgradeName)
     if (mole >= purchasedAutomaticUpgrade.price) {
         purchasedAutomaticUpgrade.quantity++
         mole -= purchasedAutomaticUpgrade.price
@@ -80,6 +80,7 @@ function buyAutoUpgrades(autoUpgradeName) {
         window.alert("You don't have enough moles!!")
     }
     drawClickUpgrade()
+    drawAutomaticUpgrade()
 }
 
 function drawClickUpgrade(clickUpgradeName) {
@@ -104,6 +105,31 @@ function drawClickUpgrade(clickUpgradeName) {
             `
         document.getElementById('clickUpgradeName').innerHTML = clickUpgradeTemplate
     })
+    drawTotal()
+}
+
+function drawAutomaticUpgrade(automaticUpgradeName) {
+
+    let automaticUpgradeTemplate = ''
+
+    automaticUpgrades.forEach(automaticUpgrade => {
+        automaticUpgradeTemplate += `
+                            <div class="col-3 infoCard">
+                                <p>${automaticUpgrade.quantity}</p>
+                            </div>
+                            <div class="col-3 infoCard">
+                                <p>${automaticUpgrade.name}</p>
+                            </div>
+                            <div class="col-3 infoCard">
+                                <p>==></p>
+                            </div>
+                            <div class="col-3 infoCard">
+                                <p>${automaticUpgrade.multiplier}*${automaticUpgrade.quantity}</p>
+                            </div>
+            
+            `
+        document.getElementById('automaticUpgradeName').innerHTML = automaticUpgradeTemplate
+    })
 }
 
 let autoMole = 0
@@ -114,4 +140,4 @@ function collectAutoUpgrades() {
     })
 }
 
-setInterval(collectAutoUpgrades, 3000)
+//setInterval(collectAutoUpgrades, 3000)
