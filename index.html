@@ -29,7 +29,7 @@
     }
 </style>
 
-<body class="debug">
+<body class="">
 
     <header class="container-fluid">
         <section class="row justify-content-center">
@@ -64,30 +64,42 @@
                 <div class="row">
                     <!-- //SECTION - Click Upgrades Section -->
                     <div class="col-6">
-                        <div class="row text-center">
-                            <p>Click Upgrades</p>
-                            <div class="col-8 infoCard" onclick="buyMallet()">50</div>
-                            <div class="col-4 infoCard">
-                                <p>Sledge Hammer</p>
+                        <div class="row align-items-center p-3">
+                            <p class="text-center">Click Upgrades</p>
+
+                            <div class="col-5 text-center">
+                                <button class="upgradeButton " onclick="buyClickUpgrades('mallet')">100 Moles</button>
+                            </div>
+                            <div class="col-6 ">
+                                <p>Mallet</p>
                                 <p>+1</p>
                             </div>
-                            <div class="col-8 infoCard">250</div>
-                            <div class="col-4 infoCard">
-                                <p>Drill</p>
+
+                            <div class="col-5 text-center">
+                                <button class="upgradeButton " onclick="buyClickUpgrades('sledgehammer')">250
+                                    Moles</button>
+                            </div>
+                            <div class="col-6 ">
+                                <p>Sledgehammer</p>
                                 <p>+5</p>
                             </div>
                         </div>
                     </div>
                     <!-- //SECTION - Auto Upgrades Section -->
                     <div class="col-6">
-                        <div class="row text-center">
+                        <div class="row text-center p-3">
                             <p>Auto Upgrades</p>
-                            <div class="col-8 infoCard">50</div>
+                            <div class="col-8 infoCard">
+                                <button class="upgradeButton " onclick="buyAutoUpgrades('backhoe')">500 Moles</button>
+                            </div>
                             <div class="col-4 infoCard">
                                 <p>Sledge Hammer</p>
                                 <p>+1</p>
                             </div>
-                            <div class="col-8 infoCard">250</div>
+                            <div class="col-8 infoCard">
+                                <button class="upgradeButton " onclick="buyAutoUpgrades('excavator')">1000
+                                    Moles</button>
+                            </div>
                             <div class="col-4 infoCard">
                                 <p>Drill</p>
                                 <p>+5</p>
@@ -101,24 +113,26 @@
 
                 <div class="row">
                     <!-- //SECTION - Click Stats Section -->
-                    <div class="col-6">
-                        <div class="row text-center">
+                    <div class="col-6 text-center p-3">
+                        <div class="">
                             <p>Click Stats</p>
+                        </div>
+                        <div class="row text-center p-3" id="clickUpgradeName">
 
-                            <div class="col-3 infoCard">
-                                <p>20</p>
+                            <!-- <div class="col-3 infoCard">
+                                <p>0</p>
                             </div>
                             <div class="col-3 infoCard">
-                                <p>knives</p>
+                                <p>Mallets</p>
                             </div>
                             <div class="col-3 infoCard">
                                 <p>==></p>
                             </div>
                             <div class="col-3 infoCard">
                                 <p>20</p>
-                            </div>
+                            </div>  -->
 
-                            <div class="col-3 infoCard">
+                            <!-- <div class="col-3 infoCard">
                                 <p>8</p>
                             </div>
                             <div class="col-3 infoCard">
@@ -129,14 +143,14 @@
                             </div>
                             <div class="col-3 infoCard">
                                 <p>45</p>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
 
                     <!-- //SECTION - Auto Stats Section -->
                     <div class="col-6">
-                        <div class="row text-center">
+                        <div class="row text-center p-3">
                             <p>Auto Stats</p>
 
                             <div class="col-3 infoCard">

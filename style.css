@@ -1,13 +1,24 @@
+:root {
+    --red: rgba(187, 26, 26)
+}
+
 .imgCard {
     height: 30vh;
     width: 50%;
 }
 
 .infoBorder {
-    border: 1px solid rgba(187, 26, 26);
+    border: 1px solid var(--red);
 }
 
 .infoCard {
     height: 10vh;
-    border: 1px solid rgba(187, 26, 26);
+
+}
+
+.upgradeButton {
+    background-color: var(--red);
+    color: white;
+    border-radius: 10px;
+    height: 4vh;
 }
