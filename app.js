@@ -1,1 +1,5 @@
-console.log('hello miner')
+
+
+function mine() {
+    console.log('this is mining')
+}

@@ -1,4 +1,13 @@
 .imgCard {
-    height: 50vh;
-    width: 100%;
+    height: 30vh;
+    width: 50%;
+}
+
+.infoBorder {
+    border: 1px solid rgba(187, 26, 26);
+}
+
+.infoCard {
+    height: 10vh;
+    border: 1px solid rgba(187, 26, 26);
 }
