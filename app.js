@@ -34,6 +34,7 @@ let automaticUpgrades = [
 
 let moleTotal = 0
 let molePerSecond = 0
+let molePerClick = 0
 
 function mine() {
     moleTotal++
@@ -143,6 +144,8 @@ function collectAutomaticUpgrades() {
         moleTotal += molePerSecond
         //console.log('this is the total autoUpgrades', totalAutomaticUpgrades)
         drawTotals()
+
+        document.getElementById('molePerSecond').innerText = `Moles Per Second:${molePerSecond}`
     })
 }
 
@@ -151,7 +154,8 @@ function totalClickDmg() {
         if (clickUpgrade.quantity > 0) {
             let molePerClick = (clickUpgrade.quantity * clickUpgrade.multiplier)
             moleTotal += molePerClick
-            document.getElementById('molePerClick').innerText = `Moles Per Click: ${molePerClick}`
+
+            document.getElementById('molePerClick').innerText = `Moles Per Click:${molePerClick}`
         }
     })
 }

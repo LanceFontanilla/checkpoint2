@@ -30,7 +30,6 @@ body {
     width: 50%;
 }
 
-
 .infoCard {
     background-color: var(--red);
     color: white;
@@ -46,7 +45,6 @@ body {
     color: rgb(65, 0, 0);
     border-radius: 10px;
     border: 1px solid black;
-    height: 4vh;
 }
 
 .upgradeButton:hover {
@@ -57,4 +55,8 @@ body {
 
 .bg-red {
     background-color: var(--red);
+}
+
+.bg-darkish {
+    background-color: rgba(15, 14, 14, 0.651);
 }
