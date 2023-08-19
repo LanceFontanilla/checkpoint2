@@ -116,6 +116,7 @@ function drawClickUpgrade() {
         }
     })
     document.getElementById('clickUpgrade').innerHTML = clickUpgradeTemplate
+    updateMPC()
     drawTotals()
 }
 
@@ -134,31 +135,45 @@ function drawAutomaticUpgrade() {
         }
         document.getElementById('automaticUpgrade').innerHTML = automaticUpgradeTemplate
         drawTotals()
-        document.getElementById('molePerSecond').innerText = `Moles Per Second: ${molePerSecond}`
+        updateMPS()
     })
 }
 
 function collectAutomaticUpgrades() {
     automaticUpgrades.forEach(automaticUpgrade => {
-        let molePerSecond = (automaticUpgrade.quantity * automaticUpgrade.multiplier)
-        moleTotal += molePerSecond
+        let total = (automaticUpgrade.quantity * automaticUpgrade.multiplier)
+        moleTotal += total
         //console.log('this is the total autoUpgrades', totalAutomaticUpgrades)
         drawTotals()
-
-        document.getElementById('molePerSecond').innerText = `Moles Per Second:${molePerSecond}`
     })
 }
 
 function totalClickDmg() {
     clickUpgrades.forEach(clickUpgrade => {
         if (clickUpgrade.quantity > 0) {
-            let molePerClick = (clickUpgrade.quantity * clickUpgrade.multiplier)
-            moleTotal += molePerClick
+            let total = (clickUpgrade.quantity * clickUpgrade.multiplier)
+            moleTotal += total
 
-            document.getElementById('molePerClick').innerText = `Moles Per Click:${molePerClick}`
         }
     })
 }
+
+function updateMPC() {
+    clickUpgrades.forEach(clickUpgrade => {
+        molePerClick = (clickUpgrade.totalDmg)
+
+        document.getElementById('molePerClick').innerText = `Moles Per Click:${molePerClick}`
+    })
+}
+
+function updateMPS() {
+    automaticUpgrades.forEach(automaticUpgrade => {
+        molePerSecond = (automaticUpgrade.totalDmg)
+
+        document.getElementById('molePerSecond').innerText = `Moles Per Second:${molePerSecond}`
+    })
+}
+
 
 function debugTool() {
     moleTotal += 2500
@@ -171,5 +186,6 @@ function debugToolZero() {
 }
 
 setInterval(collectAutomaticUpgrades, 3000);
+updateMPS()
 drawAutomaticUpgradePrice()
 drawClickUpgradePrice()
