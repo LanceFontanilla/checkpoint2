@@ -73,42 +73,50 @@
                                 <p class="text-center headerCard">Click Upgrades</p>
                             </div>
 
-                            <div class="col-5 text-center">
-                                <button class="upgradeButton" onclick="buyClickUpgrades('mallet')">
-                                    <spanid="updatePrice">100 Moles</spanid=>
-                                </button>
-                            </div>
-                            <div class="col-6 bg-red">
-                                <p>Mallet +5 Moles</p>
+                            <div class="col-6 text-center">
+                                <button class="upgradeButton" onclick="buyClickUpgrades('mallet')">Mallet
+                                    Upgrade</button>
+                                <p>+5 Moles</p>
                             </div>
 
-                            <div class="col-5 text-center">
-                                <button class="upgradeButton" onclick="buyClickUpgrades('hammer')"><span
-                                        id="updatePrice">250 Moles</span></button>
-                            </div>
-                            <div class="col-6 bg-red">
-                                <p>Hammer +10 Moles</p>
+                            <div class="col-6 text-center">
+                                <button class="upgradeButton" onclick="buyClickUpgrades('hammer')">Hammer
+                                    Upgrade</button>
+                                <p>+10 Moles</p>
                             </div>
                         </div>
+                        <div class="col-12 ">
+                            <p class="headerCard text-center">Prices:</p>
+                        </div>
+
+                        <div class="row" id="clickUpdatePrice">
+                        </div>
+
                     </div>
                     <!-- //SECTION - Auto Upgrades Section -->
                     <div class="col-6">
                         <div class="row align-items-center p-3">
-                            <p class="text-center headerCard">Auto Upgrades</p>
-                            <div class="col-5 text-center ">
-                                <button class="upgradeButton " onclick="buyAutomaticUpgrades('backhoe')"><span
-                                        id="updatePrice">500 Moles</span></button>
+                            <div>
+                                <p class="text-center headerCard">Auto Upgrades</p>
                             </div>
-                            <div class="col-6 bg-red">
-                                <p>Backhoe +25 Moles</p>
+
+                            <div class="col-6 text-center ">
+                                <button class="upgradeButton" onclick="buyAutomaticUpgrades('backhoe')">Backhoe
+                                    Upgrade</button>
+                                <p>+25 Moles</p>
                             </div>
-                            <div class="col-5 text-center">
-                                <button class="upgradeButton " onclick="buyAutomaticUpgrades('excavator')"><span
-                                        id="updatePrice">1000 Moles</span></button>
+
+                            <div class="col-6 text-center">
+                                <button class="upgradeButton" onclick="buyAutomaticUpgrades('excavator')">
+                                    Excavator Upgrade</button>
+                                <p>+50 Moles</p>
                             </div>
-                            <div class="col-6 bg-red ">
-                                <p>Excavator +50 Moles</p>
-                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <p class="headerCard text-center">Prices:</p>
+                        </div>
+
+                        <div class="row" id="automaticUpdatePrice">
                         </div>
                     </div>
                 </div>
