@@ -161,7 +161,6 @@ function totalClickDmg() {
 function updateMPC() {
     clickUpgrades.forEach(clickUpgrade => {
         molePerClick = (clickUpgrade.totalDmg)
-
         document.getElementById('molePerClick').innerText = `Moles Per Click:${molePerClick}`
     })
 }
@@ -169,7 +168,6 @@ function updateMPC() {
 function updateMPS() {
     automaticUpgrades.forEach(automaticUpgrade => {
         molePerSecond = (automaticUpgrade.totalDmg)
-
         document.getElementById('molePerSecond').innerText = `Moles Per Second:${molePerSecond}`
     })
 }
