@@ -35,26 +35,31 @@
 </style>
 
 <body class="font">
-
+    <!--//SECTION - Tile Bar  -->
     <header class="container-fluid">
         <section class="row justify-content-center">
             <div class="col-6 text-center mainHeaderText">MOLE MINER</div>
         </section>
     </header>
-    <main class="container-fluid">
 
-        <!-- //!SECTION Information Section -->
+
+    <main class="container-fluid">
+        <!-- //SECTION Information Section -->
         <section class="row justify-content-center align-items-center">
             <div class="col-4 text-center">
                 <div class="headerText headerCard">Current Bankroll</div>
-                <div class="fs-2 infoCard" id="moleTotal">Total Moles : 0</div>
+                <div class="fs-2 infoCard" id="moleTotal">Total Moles: 0</div>
                 <div class="infoCard" id="molePerClick">Moles Per Click: 1</div>
                 <div class="infoCard" id="molePerSecond">Moles Per Second: 0</div>
             </div>
 
             <!-- //SECTION - Click on Mole to mine -->
-            <div class="col-5 text-center p-4">
+            <div class="col-6 text-center p-4">
                 <img class="imgCard" onclick="mine()" src="mole.png" alt="mole">
+            </div>
+            <div class="col-2">
+                <button onclick="debugTool()">Debug Tool +2500</button>
+                <button onclick="debugToolZero()">Debug Tool Zero</button>
             </div>
         </section>
     </main>

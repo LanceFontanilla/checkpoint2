@@ -1,6 +1,6 @@
 :root {
-    --red: rgba(187, 26, 26);
-    --darkRed: rgb(131, 9, 9);
+    --red: rgba(187, 26, 26, .75);
+    --darkRed: rgb(131, 9, 9, .75);
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 }
 
 .imgCard {
-    height: 30vh;
+    height: 33vh;
     width: 50%;
 }
 
@@ -42,8 +42,8 @@ body {
 }
 
 .upgradeButton {
-    background-color: var(--red);
-    color: white;
+    background-color: rgb(255, 0, 0);
+    color: rgb(65, 0, 0);
     border-radius: 10px;
     border: 1px solid black height: 4vh;
 }
