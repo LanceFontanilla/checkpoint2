@@ -38,7 +38,7 @@
     <!--//SECTION - Tile Bar  -->
     <header class="container-fluid">
         <section class="row justify-content-center">
-            <div class="col-6 text-center mainHeaderText">MOLE MINER</div>
+            <div class="col-12 col-md-6 text-center mainHeaderText">MOLE MINER</div>
         </section>
     </header>
 
@@ -46,7 +46,7 @@
     <main class="container-fluid">
         <!-- //SECTION Information Section -->
         <section class="row justify-content-center align-items-center">
-            <div class="col-4 text-center">
+            <div class="col-12 col-md-4 text-center">
                 <div class="headerText headerCard">Current Bankroll</div>
                 <div class="fs-2 infoCard" id="moleTotal">Total Moles: 0</div>
                 <div class="infoCard" id="molePerClick">Moles Per Click: 1</div>
@@ -54,10 +54,10 @@
             </div>
 
             <!-- //SECTION - Click on Mole to mine -->
-            <div class="col-6 text-center p-4">
+            <div class="col-12 col-md-6 text-center p-4">
                 <img class="imgCard" onclick="mine()" src="mole.png" alt="mole">
             </div>
-            <div class="col-2">
+            <div class="col-12 col-md-2">
                 <button onclick="debugTool()">Debug Tool +2500</button>
                 <button onclick="debugToolZero()">Debug Tool Zero</button>
             </div>
@@ -69,28 +69,28 @@
     <footer class="container-fluid">
         <section class="row bg-dark">
 
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="row">
                     <!-- //SECTION - Click Upgrades Section -->
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                         <div class="row align-items-center p-3">
                             <div>
                                 <p class="text-center headerCard">Click Upgrades</p>
                             </div>
 
-                            <div class="col-6 text-center">
+                            <div class="col 12 col-md-6 text-center">
                                 <button class="upgradeButton" onclick="buyClickUpgrades('mallet')">Mallet
                                     Upgrade</button>
                                 <p>+5 Moles</p>
                             </div>
 
-                            <div class="col-6 text-center">
+                            <div class="col-12 col-md-6 text-center">
                                 <button class="upgradeButton" onclick="buyClickUpgrades('hammer')">Hammer
                                     Upgrade</button>
                                 <p>+10 Moles</p>
                             </div>
                         </div>
-                        <div class="col-12 ">
+                        <div class="col-12">
                             <p class="headerCard text-center">Prices:</p>
                         </div>
 
@@ -99,25 +99,25 @@
 
                     </div>
                     <!-- //SECTION - Auto Upgrades Section -->
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                         <div class="row align-items-center p-3">
                             <div>
                                 <p class="text-center headerCard">Auto Upgrades</p>
                             </div>
 
-                            <div class="col-6 text-center ">
+                            <div class="col-12 col-md-6 text-center ">
                                 <button class="upgradeButton" onclick="buyAutomaticUpgrades('backhoe')">Backhoe
                                     Upgrade</button>
                                 <p>+25 Moles</p>
                             </div>
 
-                            <div class="col-6 text-center">
+                            <div class="col-12 col-md-6 text-center">
                                 <button class="upgradeButton" onclick="buyAutomaticUpgrades('excavator')">
                                     Excavator Upgrade</button>
                                 <p>+50 Moles</p>
                             </div>
                         </div>
-                        <div class="col-12 ">
+                        <div class="col-12">
                             <p class="headerCard text-center">Prices:</p>
                         </div>
 
@@ -127,17 +127,17 @@
                 </div>
             </div>
             <!-- //!SECTION STATS Section -->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="row">
                     <!-- //SECTION - Click Stats Section -->
-                    <div class="col-6 text-center p-3">
+                    <div class="col-12 col-md-6 text-center p-3">
                         <div class="">
                             <p class="text-center headerCard">Click Stats</p>
                         </div>
                         <div class="row text-center p-3" id="clickUpgrade"></div>
                     </div>
                     <!-- //SECTION - Auto Stats Section -->
-                    <div class="col-6 text-center p-3">
+                    <div class="col-12 col-md-6 text-center p-3">
                         <div class="">
                             <p class="text-center headerCard">Auto Stats</p>
                         </div>
