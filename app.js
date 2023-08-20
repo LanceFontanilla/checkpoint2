@@ -1,4 +1,4 @@
-
+//SECTION - Arrays
 let clickUpgrades = [
     {
         name: 'mallet',
@@ -31,22 +31,18 @@ let automaticUpgrades = [
         totalDmg: 0
     }
 ]
-
+//SECTION - Variables
 let moleTotal = 0
 let molePerSecond = 0
 let molePerClick = 0
-
+//NOTE -  - click Mole
 function mine() {
     moleTotal++
     console.log('this is mining', moleTotal)
     totalClickDmg()
     drawTotals()
 }
-
-function drawTotals() {
-    document.getElementById('moleTotal').innerText = `Total Moles: ${moleTotal}`
-}
-
+//SECTION - Buy Upgrades Section
 function buyClickUpgrades(clickUpgradeName) {
     let purchasedClickUpgrade = clickUpgrades.find(clickUpgrade => clickUpgrade.name == clickUpgradeName)
     if (moleTotal >= purchasedClickUpgrade.price) {
@@ -61,7 +57,6 @@ function buyClickUpgrades(clickUpgradeName) {
     drawClickUpgrade()
     drawClickUpgradePrice()
 }
-
 function buyAutomaticUpgrades(automaticUpgradeName) {
     let purchasedAutomaticUpgrade = automaticUpgrades.find(automaticUpgrade => automaticUpgrade.name == automaticUpgradeName)
     if (moleTotal >= purchasedAutomaticUpgrade.price) {
@@ -76,50 +71,47 @@ function buyAutomaticUpgrades(automaticUpgradeName) {
     drawAutomaticUpgrade()
     drawAutomaticUpgradePrice()
 }
-
+//SECTION - Draw info Section 
 function drawAutomaticUpgradePrice() {
     let automaticUpgradePriceTemplate = ''
     automaticUpgrades.forEach(automaticUpgrade => {
         automaticUpgradePriceTemplate += `
-            <div class="col-6 text-center bg-red">
-            <p>${automaticUpgrade.name} Price: ${automaticUpgrade.price} Moles</p>
-            </div>
+        <div class="col-6 text-center bg-red">
+        <p>${automaticUpgrade.name} Price: ${automaticUpgrade.price} Moles</p>
+        </div>
         `
     })
     document.getElementById('automaticUpdatePrice').innerHTML = automaticUpgradePriceTemplate
 }
-
 function drawClickUpgradePrice() {
     let clickUpgradePriceTemplate = ''
     clickUpgrades.forEach(clickUpgrade => {
         clickUpgradePriceTemplate += `
-            <div class="col-6 text-center bg-red">
+        <div class="col-6 text-center bg-red">
             <p>${clickUpgrade.name} Price: ${clickUpgrade.price} Moles</p>
             </div>
-        `
+            `
     })
     document.getElementById('clickUpdatePrice').innerHTML = clickUpgradePriceTemplate
 }
-
 function drawClickUpgrade() {
     let clickUpgradeTemplate = ''
     clickUpgrades.forEach(clickUpgrade => {
         if (clickUpgrade.quantity > 0) {
             clickUpgradeTemplate += `                            
-            <div class="col-6 bg-red">
-            <p> ${clickUpgrade.name} Qty: <span>${clickUpgrade.quantity}</span></p>
-            </div>
-            <div class="col-6 bg-red">
-            <p> ${clickUpgrade.name} DMG: <span>${clickUpgrade.totalDmg}</span></p>
-            </div>
-            `
+                <div class="col-6 bg-red">
+                <p> ${clickUpgrade.name} Qty: <span>${clickUpgrade.quantity}</span></p>
+                </div>
+                <div class="col-6 bg-red">
+                <p> ${clickUpgrade.name} DMG: <span>${clickUpgrade.totalDmg}</span></p>
+                </div>
+                `
         }
     })
     document.getElementById('clickUpgrade').innerHTML = clickUpgradeTemplate
     updateMPC()
     drawTotals()
 }
-
 function drawAutomaticUpgrade() {
     let automaticUpgradeTemplate = ''
     automaticUpgrades.forEach(automaticUpgrade => {
@@ -138,7 +130,18 @@ function drawAutomaticUpgrade() {
         updateMPS()
     })
 }
-
+//SECTION - Information Section 
+function drawTotals() {
+    document.getElementById('moleTotal').innerText = `Total Moles: ${moleTotal}`
+}
+function totalClickDmg() {
+    clickUpgrades.forEach(clickUpgrade => {
+        if (clickUpgrade.quantity > 0) {
+            let total = (clickUpgrade.quantity * clickUpgrade.multiplier)
+            moleTotal += total
+        }
+    })
+}
 function collectAutomaticUpgrades() {
     automaticUpgrades.forEach(automaticUpgrade => {
         let total = (automaticUpgrade.quantity * automaticUpgrade.multiplier)
@@ -147,42 +150,29 @@ function collectAutomaticUpgrades() {
         drawTotals()
     })
 }
-
-function totalClickDmg() {
-    clickUpgrades.forEach(clickUpgrade => {
-        if (clickUpgrade.quantity > 0) {
-            let total = (clickUpgrade.quantity * clickUpgrade.multiplier)
-            moleTotal += total
-
-        }
-    })
-}
-
 function updateMPC() {
-    clickUpgrades.forEach(clickUpgrade => {
-        molePerClick = (clickUpgrade.totalDmg)
-        document.getElementById('molePerClick').innerText = `Moles Per Click:${molePerClick}`
-    })
+    let clickDmg1 = clickUpgrades[0].totalDmg
+    let clickDmg2 = clickUpgrades[1].totalDmg
+    molePerClick = (clickDmg1 + clickDmg2) + 1
+    document.getElementById('molePerClick').innerText = `Moles Per Click:${molePerClick}`
+    //console.log('this is the moles per click', molePerClick)
 }
-
 function updateMPS() {
-    automaticUpgrades.forEach(automaticUpgrade => {
-        molePerSecond = (automaticUpgrade.totalDmg)
-        document.getElementById('molePerSecond').innerText = `Moles Per Second:${molePerSecond}`
-    })
+    let autoDmg1 = automaticUpgrades[0].totalDmg
+    let autoDmg2 = automaticUpgrades[1].totalDmg
+    molePerSecond = (autoDmg1 + autoDmg2)
+    document.getElementById('molePerSecond').innerText = `Moles Per Second:${molePerSecond}`
+    //console.log('this is the moles per second', molePerSecond)
 }
-
-
+//SECTION -  UTILS 
 function debugTool() {
     moleTotal += 2500
     drawTotals()
 }
-
 function debugToolZero() {
     moleTotal = 0
     drawTotals()
 }
-
 setInterval(collectAutomaticUpgrades, 3000);
 updateMPS()
 drawAutomaticUpgradePrice()
